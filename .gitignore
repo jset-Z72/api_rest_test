@@ -1,0 +1,4 @@
+env.ini
+logs/errors.log
+logs/queries.log
+logs/routes.log
