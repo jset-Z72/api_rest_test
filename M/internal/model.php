@@ -1,5 +1,6 @@
 <?php
     require_once(__DIR__ . '/../core/utils.php');
+    require_once(__DIR__ . '/../core/query_utils.php');
 
     class Model {
         private $connection;
@@ -19,6 +20,10 @@
                 $str_update_set_fields = '';    // (:field_1, :field_2, ...)
                 $str_update_fields = '';        // ("field_1", "field_2", ...)
                 $str_select_fields = '';        // ("primary_key", "auto_set_value_1", "field_1", ...)
+
+                echo '<pre>';
+                echo print_r(get_query_fields($table_map));
+                echo '</pre>';
 
                 // Validation and setter prepare queries
                 $pk_avaiable = false;
@@ -75,14 +80,14 @@
         }
 
         // Crud functions
-        public function Select(callable $where) {
+        public function Select(?callable $where = null) {
             // Excecute SELECT query to table.
             // $where is a closure for filter data
             // after query
             $this->select_query->execute();
             $data = $this->select_query->fetchAll(PDO::FETCH_ASSOC);
             if(isset($where)){
-                $data = array_filter($data, $where, ARRAY_FILTER_USE_BOTH);
+                $data = array_filter($data, $where);
             }
             return $data;
         }

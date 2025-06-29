@@ -10,8 +10,7 @@
     */
     
     // echo '<pre>'; print_r($env); echo '</pre>';
-    /*$detalles_zapatos_model = new Detalles_zapatos_model($db_connection);*/
-    echo '<pre>'; print_r($Detalles_zapatos_model->Select(
-        function ($v, $k) { return $v['Id'] == 12; }
-    )); echo '</pre>';
+    /*echo '<pre>'; print_r($Detalles_zapatos_model->Select(
+        function ($value) { return $value['Id'] == 12; }
+    )); echo '</pre>';*/
 ?>

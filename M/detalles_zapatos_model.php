@@ -16,7 +16,9 @@
 				'Cod_categoria' => 1,
 				'Cod_clasificacion' => 1,
 				'Talla' => 1,
-				'Activo' => 1,
+				'Activo' => [
+					"status_field" => 1,
+				],
 			]
 		],
 		$db_connection);
