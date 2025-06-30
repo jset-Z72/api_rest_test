@@ -25,8 +25,9 @@
             try {
                 parent::__construct($dsn);
                 $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                //$log->model('info', 'successful connection to DSN:'.$dsn);
             } catch (PDOException $err) {
-                echo $err->getMessage();
+                //$log->model('error',$err->getMessage());
             }
         }
     }

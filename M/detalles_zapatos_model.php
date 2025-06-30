@@ -12,6 +12,7 @@
 					'auto_set' => 1,
 				],
 				'Cod_zapato' => 1,
+				'Cod_color' => 1,
 				'Descripcion' => 1,
 				'Cod_categoria' => 1,
 				'Cod_clasificacion' => 1,

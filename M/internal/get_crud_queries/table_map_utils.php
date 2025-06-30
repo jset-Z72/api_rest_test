@@ -1,14 +1,14 @@
 <?php
-    require_once('utils.php');
+    require_once(__DIR__ . '/../../core/utils.php');
 
     function validate_table_map(array $table_map){
         $recognized_data = [
-            'primary_key' => null,
+            'primary_key' => '',
             'auto_sets' => array(),
             'status_field' => '',
         ];
         $pk_avaiable = false;
-        $auto_set_avaiable = false;
+        $status_avaiable = false;
 
         // Validates fields
         validate_name_table($table_map['table_name']);
@@ -26,15 +26,15 @@
             }
 
             if(isset($value['status_field'])){
-                $recognized_data['auto_sets'][] = $key;
-            }
-
-            if(isset($value['auto_set'])){
-                if($auto_set_avaiable){
+                if($status_avaiable){
                     throw new Exception("Ya existe un campo de eliminación lógica");
                 }
 
-                $auto_set_avaiable = true;
+                $status_avaiable = true;
+                $recognized_data['status_field'] = $key;
+            }
+
+            if(isset($value['auto_set'])){
                 $recognized_data['auto_sets'][] = $key;
             }
         }
