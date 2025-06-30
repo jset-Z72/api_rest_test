@@ -28,6 +28,8 @@
                 //$log->model('info', 'successful connection to DSN:'.$dsn);
             } catch (PDOException $err) {
                 //$log->model('error',$err->getMessage());
+                echo "\n\n",$dsn,"\n";
+                echo $err->getMessage();
             }
         }
     }

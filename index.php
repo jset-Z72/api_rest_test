@@ -1,6 +1,6 @@
 <?php
     // Variables globales
-    $env = parse_ini_file('./env.ini', true);
+    $env = parse_ini_file('env.ini', true);
 
     // Cargar el logger
     //require_once('core/logger.php');
@@ -32,7 +32,20 @@
     ]);*/
     // $Detalles_zapatos_model->Delete([ 'Id' => 1 ]);
     // echo '<pre>'; print_r($env); echo '</pre>';
+    //echo '<pre>';
+    //echo print_r($Detalles_zapatos_model->Select(/*function($v) { return $v['Cod_color']=='mr'; }*/));
+    //echo '</pre>';*/
+
+    /*$Data_model->Create([
+        'ci' => 'V' . random_int(0,9999),
+        'name' => ['José', 'Manuel', 'John', 'Ester', 'Gleni'][random_int(0,4)],
+        'surname' => ['Colmenares', 'Sangronis', 'Galarga', 'Corteza', 'Hernandez', 'Guitierres'][random_int(0,6)],
+        'year' => random_int(9,50),
+    ]);*/
     echo '<pre>';
-    echo print_r($Detalles_zapatos_model->Select(/*function($v) { return $v['Cod_color']=='mr'; }*/));
+    echo print_r($Data_model->Select()), "\n";
+    echo '----------------------------------------------------------------------------------------------------', "\n";
+    echo 'Request: ',$_SERVER['REQUEST_URI'], "\n";
+    echo 'Method: ',$_SERVER['REQUEST_METHOD'], "\n";
     echo '</pre>';
 ?>
