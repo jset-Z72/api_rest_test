@@ -22,6 +22,9 @@
 
                 // Get templates for prepare queries
 
+                echo '<pre>';
+                echo print_r($queries);
+                echo '</pre>';
                 // Prepare CRUD queries
                 $this->select_query = $this->connection->prepare($queries['select']);
                 $this->update_query = $this->connection->prepare($queries['update']);
@@ -53,6 +56,22 @@
                 $this->create_query->bindValue(':'.$key, $value);
             }
             $this->create_query->execute($data);
+            return $data;
+        }
+
+        public function Update($data){
+            foreach($data as $key => $value){
+                $this->update_query->bindValue(':'.$key, $value);
+            }
+            $this->update_query->execute($data);
+            return $data;
+        }
+        
+        public function Delete($data){
+            foreach($data as $key => $value){
+                $this->delete_query->bindValue(':'.$key, $value);
+            }
+            $this->delete_query->execute($data);
             return $data;
         }
     }

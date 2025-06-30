@@ -14,15 +14,25 @@
     */
     
     /*$Detalles_zapatos_model->Create([
-        'Cod_zapato' => 'nk001',
+        'Cod_zapato' => 'nk' . random_int(111,999),
         'Cod_color' => 'mr',
-        'Descripcion' => 'zapato',
+        'Descripcion' => 'zapato pecuecoso',
         'Cod_categoria' => 'dm',
         'Cod_clasificacion' => 'cs',
-        'Talla' => 121
+        'Talla' => 56
     ]);*/
+    /*$Detalles_zapatos_model->Update([
+        'Id' => 1,
+        'Cod_zapato' => 'fino',
+        'Cod_color' => 'rjj',
+        'Descripcion' => 'zapato',
+        'Cod_categoria' => 'cb',
+        'Cod_clasificacion' => 'dp',
+        'Talla' => random_int(10,300)
+    ]);*/
+    // $Detalles_zapatos_model->Delete([ 'Id' => 1 ]);
     // echo '<pre>'; print_r($env); echo '</pre>';
     echo '<pre>';
-    echo print_r($Detalles_zapatos_model->Select());
+    echo print_r($Detalles_zapatos_model->Select(/*function($v) { return $v['Cod_color']=='mr'; }*/));
     echo '</pre>';
 ?>
