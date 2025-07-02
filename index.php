@@ -2,7 +2,7 @@
 // index.php - Punto único de entrada
 
 // Configuración inicial
-header('Content-Type: application/json');
+header('Content-Type: text/plain');
 
 // Obtener método HTTP
 $method = $_SERVER['REQUEST_METHOD'];
@@ -22,8 +22,16 @@ $controller_name = $routes[0] ?? 'home';
 $action_name = $routes[1] ?? 'index';
 $param = $routes[2] ?? null;
 
-echo "{ \"Endpoint\": \"$request_uri\" \"Method\": \"$method\" }"
-;
+echo "{ \"Endpoint\": \"$request_uri\", \"Method\": \"$method\", \"Complete_url\": \"".$_SERVER['REQUEST_URI']."\" }"
+, "\n";
+echo preg_replace("/^.+index.php/", "", $request_uri);
+echo "\n";
+echo print_r($_SERVER);
+echo "\n";
+echo print_r($_REQUEST);
+echo "\n";
+echo print_r($_GET);
+
 /* ---
 // Función para cargar controladores
 function loadController($controller_name) {
