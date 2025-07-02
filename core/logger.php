@@ -1,41 +1,59 @@
 <?php
     class Logger {
-        private $model_file;
-        private $app_file;
-        private $route_file;
+        private $locates;
+        private $log_avaiable;
 
         public function __construct($files) {
-            $this->model_file = file_exists($files['MODELS']) ? $files['MODELS'] : '';
-            $this->app_file = file_exists($files['APP']) ? $files['APP'] : '';
-            $this->route_file = file_exists($files['ROUTES']) ? $files['ROUTES'] : '';
+            $this->locates = [
+                'models' => file_exists($files['MODELS']) ? $files['MODELS'] : '',
+                'app' => file_exists($files['APP']) ? $files['APP'] : '',
+                'routes' => file_exists($files['ROUTES']) ? $files['ROUTES'] : '',
+            ];
 
             foreach($files as $key => $value){
                 if(!file_exists($value)){
                     try {
                         file_put_contents($value, '');
                     } catch (Exception $e) {
+                        // Define function for register logs
+                        // in case error in files
+                        $this->log_avaiable = false;
                         echo $e->getMessage();
+                        return;
                     }
                 }
             }
+
+            // In case of avaiable file logs
+            $this->log_avaiable = true;
         }
 
+        // Register log
+        private function put_log($locate, $message, $level){
+            if($this->log_avaiable){
+                file_put_contents($this->locates[$locate], FILE_APPEND | LOCK_EX);
+            } elseif ($level == 'error') {
+                echo '<pre>',$message,'</pre>',"\n";
+            }
+        }
+
+        // Functions logs
         public function model($level, $msg){
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
-            file_put_contents($this->model_file, FILE_APPEND | LOCK_EX);
+            $this->put_log('models', $msg, $level);
         }
 
         public function app($level, $msg){
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
-            file_put_contents($this->app_file, FILE_APPEND | LOCK_EX);
+            $this->put_log('app', $msg, $level);
         }
 
         public function route($level, $msg){
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
-            file_put_contents($this->route_file, FILE_APPEND | LOCK_EX);
+            $this->put_log('routes', $msg, $level);
         }
     }
 ?>

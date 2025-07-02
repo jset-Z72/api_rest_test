@@ -17,7 +17,7 @@
             'DB_USER' => 'root',
             'DB_PASS' => '',
             'DB_NAME' => ''
-        ]) {
+        ], &$log) {
             // Constructor
 
             $dsn = get_dsn($DSN);
@@ -25,10 +25,9 @@
             try {
                 parent::__construct($dsn);
                 $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                //$log->model('info', 'successful connection to DSN:'.$dsn);
+                $log->model('info', 'successful connection to DSN:'.$dsn);
             } catch (PDOException $err) {
                 //$log->model('error',$err->getMessage());
-                echo "\n\n",$dsn,"\n";
                 echo $err->getMessage();
             }
         }

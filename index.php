@@ -1,51 +1,69 @@
 <?php
-    // Variables globales
-    $env = parse_ini_file('env.ini', true);
+// index.php - Punto único de entrada
 
-    // Cargar el logger
-    //require_once('core/logger.php');
-    //$log = new Logger($env['LOG']);
+// Configuración inicial
+header('Content-Type: application/json');
 
-    require_once('M/init.php');
-    /* Obtiene todo del modelo
-     * adquiere los archivos de modelo correspondientes,
-     * adquiere las funciones core/utils 
-     * adquiere el constructor de conección
-    */
+// Obtener método HTTP
+$method = $_SERVER['REQUEST_METHOD'];
+
+// Obtener ruta solicitada
+$request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$routes = explode('/', trim($request_uri, '/'));
+
+// Quitar el directorio base si es necesario
+$base_path = 'api'; // ajusta esto según tu estructura
+if ($routes[0] === $base_path) {
+    array_shift($routes);
+}
+
+// Determinar controlador y acción
+$controller_name = $routes[0] ?? 'home';
+$action_name = $routes[1] ?? 'index';
+$param = $routes[2] ?? null;
+
+echo "{ \"Endpoint\": \"$request_uri\" \"Method\": \"$method\" }"
+;
+/* ---
+// Función para cargar controladores
+function loadController($controller_name) {
+    $controller_file = "controllers/{$controller_name}Controller.php";
     
-    /*$Detalles_zapatos_model->Create([
-        'Cod_zapato' => 'nk' . random_int(111,999),
-        'Cod_color' => 'mr',
-        'Descripcion' => 'zapato pecuecoso',
-        'Cod_categoria' => 'dm',
-        'Cod_clasificacion' => 'cs',
-        'Talla' => 56
-    ]);*/
-    /*$Detalles_zapatos_model->Update([
-        'Id' => 1,
-        'Cod_zapato' => 'fino',
-        'Cod_color' => 'rjj',
-        'Descripcion' => 'zapato',
-        'Cod_categoria' => 'cb',
-        'Cod_clasificacion' => 'dp',
-        'Talla' => random_int(10,300)
-    ]);*/
-    // $Detalles_zapatos_model->Delete([ 'Id' => 1 ]);
-    // echo '<pre>'; print_r($env); echo '</pre>';
-    //echo '<pre>';
-    //echo print_r($Detalles_zapatos_model->Select(/*function($v) { return $v['Cod_color']=='mr'; }*/));
-    //echo '</pre>';*/
+    if (file_exists($controller_file)) {
+        require_once $controller_file;
+        $controller_class = ucfirst($controller_name) . 'Controller';
+        return new $controller_class();
+    }
+    
+    http_response_code(404);
+    echo json_encode(['error' => 'Endpoint no encontrado']);
+    exit;
+}
 
-    /*$Data_model->Create([
-        'ci' => 'V' . random_int(0,9999),
-        'name' => ['José', 'Manuel', 'John', 'Ester', 'Gleni'][random_int(0,4)],
-        'surname' => ['Colmenares', 'Sangronis', 'Galarga', 'Corteza', 'Hernandez', 'Guitierres'][random_int(0,6)],
-        'year' => random_int(9,50),
-    ]);*/
-    echo '<pre>';
-    echo print_r($Data_model->Select()), "\n";
-    echo '----------------------------------------------------------------------------------------------------', "\n";
-    echo 'Request: ',$_SERVER['REQUEST_URI'], "\n";
-    echo 'Method: ',$_SERVER['REQUEST_METHOD'], "\n";
-    echo '</pre>';
+// Router principal
+switch ("$controller_name/$action_name") {
+    case 'usuarios/listar':
+        $controller = loadController('usuarios');
+        $controller->listar();
+        break;
+        
+    case 'usuarios/obtener':
+        $controller = loadController('usuarios');
+        $controller->obtener($param);
+        break;
+        
+    case 'productos/catalogo':
+        $controller = loadController('productos');
+        $controller->catalogo();
+        break;
+        
+    case 'home/index':
+        echo json_encode(['message' => 'Bienvenido a la API']);
+        break;
+        
+    default:
+        http_response_code(404);
+        echo json_encode(['error' => 'Ruta no encontrada']);
+        break;
+} --- */
 ?>
