@@ -1,4 +1,5 @@
 <?php
+namespace Vendor {
     class Logger {
         private $locates;
         private $log_avaiable;
@@ -14,7 +15,7 @@
                 if(!file_exists($value)){
                     try {
                         file_put_contents($value, '');
-                    } catch (Exception $e) {
+                    } catch (\Exception $e) {
                         // Define function for register logs
                         // in case error in files
                         $this->log_avaiable = false;
@@ -56,4 +57,5 @@
             $this->put_log('routes', $msg, $level);
         }
     }
+}
 ?>

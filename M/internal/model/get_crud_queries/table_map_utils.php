@@ -1,5 +1,8 @@
 <?php
-    require_once(__DIR__ . '/../../core/utils.php');
+namespace Vendor\Model\__base__ {
+    require_once(__DIR__ . '/../../../core/utils.php');
+    use \Exception;
+    use function Vendor\Model\__core__\validate_name_table;
 
     function validate_table_map(array $table_map){
         $recognized_data = [
@@ -83,4 +86,5 @@
 
         return $fields;
     }
+}
 ?>

@@ -1,7 +1,8 @@
 <?php 
-    // $db_connection presente en ./init.php
+    // $db_connection presente en ./init.php Tiene la dirección de la conexión a la DB
 
-    require_once('internal/model.php');
+    require_once('internal/model/model.php');
+	use Vendor\Model\__base__\Model;
 
 	$Data_model = new Model(
 		[

@@ -1,5 +1,7 @@
 <?php
+namespace Vendor\Model\__base__ {
     require_once('table_map_utils.php');
+    use \Exception;
 
     function get_queries($table_map) {
         try {
@@ -42,4 +44,5 @@
             echo $e->getMessage();
         }
     }
+}
 ?>
