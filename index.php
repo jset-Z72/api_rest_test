@@ -31,6 +31,8 @@ echo "\n";
 echo print_r($_REQUEST);
 echo "\n";
 echo print_r($_GET);
+echo "Hola mundo: <texto> \n";
+echo "json validate: ",print_r(json_validate('{"name": "Pedro"}')),"\n";
 
 /* ---
 // Función para cargar controladores

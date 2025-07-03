@@ -1,30 +1,26 @@
 <?php
 namespace Vendor\Route\__core__ {
+    use \InvalidArgumentException;
+
     function get_endpoint_pattern(string $endpoint) {
         // Genera
         // Código extraido y modificado de Gemini
-
-        // 1. Convertir el patrón de ruta a una expresión regular
-        // Expresión regular para encontrar ":nombre_patron"
-        // Captura el nombre del patrón sin el ":"
         $param_name_patterns = '/:(\w+)/';
-
-        // Usar preg_replace_callback para construir la regex final y capturar los nombres de los patrones
-        return '¿^' . preg_replace_callback(
+        
+        return '#^' . preg_replace_callback(
             $param_name_patterns,
-            function ($match) use (&$param_names) {
-                $param_name = $match[1]; // El nombre del patrón (ej. "id")
-
-                // Reemplazar ":nombre" con un grupo de captura nombrado (?P<nombre>[^/]+)
-                // [^/]+ significa "uno o más caracteres que no sean una barra (/)".
-                // Esto asegura que capture el segmento entre barras.
-                return '(?P<' . $param_name . '>[^/]+)';
+            function ($match) {
+                // Validar que el nombre del parámetro sea válido
+                if (!preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $match[1])) {
+                    throw new InvalidArgumentException("Invalid parameter name: {$match[1]}");
+                }
+                return '(?P<' . $match[1] . '>[^\/]+)';
             },
             $endpoint
-        ) . '$¿';
+        ) . '$#x';
     }
 
-    function get_params(string $uri, string $endpoint_pattern): array {
+    /*function get_params(string $uri, string $endpoint_pattern): array {
 
         $params = array();
 
@@ -40,7 +36,7 @@ namespace Vendor\Route\__core__ {
         }
 
         return $params;
-    }
+    }*/
     
     function get_client_endpoint($uri, $main_file = 'index.php') {
         // Devuelve el endpoint, o la uri relativa de $uri,

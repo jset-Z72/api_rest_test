@@ -32,7 +32,7 @@ namespace Vendor {
         // Register log
         private function put_log($locate, $message, $level){
             if($this->log_avaiable){
-                file_put_contents($this->locates[$locate], FILE_APPEND | LOCK_EX);
+                file_put_contents($this->locates[$locate], $message, FILE_APPEND | LOCK_EX);
             } elseif ($level == 'error') {
                 echo '<pre>',$message,'</pre>',"\n";
             }
@@ -42,19 +42,19 @@ namespace Vendor {
         public function model($level, $msg){
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
-            $this->put_log('models', $msg, $level);
+            $this->put_log('models', $log, $level);
         }
 
         public function app($level, $msg){
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
-            $this->put_log('app', $msg, $level);
+            $this->put_log('app', $log, $level);
         }
 
         public function route($level, $msg){
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
-            $this->put_log('routes', $msg, $level);
+            $this->put_log('routes', $log, $level);
         }
     }
 }
