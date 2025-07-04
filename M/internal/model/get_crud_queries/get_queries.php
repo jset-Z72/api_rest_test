@@ -20,7 +20,11 @@ namespace Vendor\Model\get_crud_queries {
 
             $queries['select'] =
                 'SELECT ' .$query_fields['select']. ' FROM "' .$table_map['table_name'].
-                '" WHERE "' .$recognized_data['status_field']. '" = true;'
+                (isset($recognized_data['status_field']) ?
+                    '" WHERE "' .$recognized_data['status_field']. '" = true'
+                :
+                    '')
+                . ';'
             ;
 
             $queries['insert'] = 

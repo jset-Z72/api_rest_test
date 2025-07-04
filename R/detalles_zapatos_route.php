@@ -6,40 +6,40 @@
     // $router => enrutador
 
     require_once('./C/init.php');
-    use Assets\Controller\Data_controller;
+    use Assets\Controller\Detalles_zapatos_controller;
 
     // Creación del controlador
-    $data_controller = new Data_controller($db_connection);
+    $detalles_zapatos_controller = new Detalles_zapatos_controller($db_connection);
     
     // Ruta para Select all
-    $router->attach_endpoint('GET', '/data',
-        [$data_controller, 'all'],
+    $router->attach_endpoint('GET', '/detalles_zapatos',
+        [$detalles_zapatos_controller, 'all'],
         'Vendor\\Route\\__core__\\default_response_converter_json'
     );
 
     // Ruta para Select one
-    $router->attach_endpoint('GET', '/data/:ci',
-        [$data_controller, 'one'],
+    $router->attach_endpoint('GET', '/detalles_zapatos/:Id',
+        [$detalles_zapatos_controller, 'one'],
         'Vendor\\Route\\__core__\\default_response_converter_json'
     );
 
     // Ruta para Create one
-    $router->attach_endpoint('POST', '/data',
-        [$data_controller, 'create'],
+    $router->attach_endpoint('POST', '/detalles_zapatos',
+        [$detalles_zapatos_controller, 'create'],
         'Vendor\\Route\\__core__\\default_response_converter_json',
         'Vendor\\Route\\__core__\\default_request_converter_json'
     );
     
     // Ruta para actualizar
-    $router->attach_endpoint('PUT', '/data/:ci',
-        [$data_controller, 'update'],
+    $router->attach_endpoint('PUT', '/detalles_zapatos/:Id',
+        [$detalles_zapatos_controller, 'update'],
         'Vendor\\Route\\__core__\\default_response_converter_json',
         'Vendor\\Route\\__core__\\default_request_converter_json'
     );
 
     // Ruta para eliminar un registro
-    $router->attach_endpoint('DELETE', '/data/:ci',
-        [$data_controller, 'delete'],
+    $router->attach_endpoint('DELETE', '/detalles_zapatos/:Id',
+        [$detalles_zapatos_controller, 'delete'],
         'Vendor\\Route\\__core__\\default_response_converter_json',
     )
 ?>

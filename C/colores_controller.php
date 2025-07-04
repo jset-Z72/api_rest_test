@@ -3,11 +3,11 @@ namespace Assets\Controller {
 
     use Exception;
 
-    // Controlador para el modelo data
+    // Controlador para el modelo colores
     require_once('./M/init.php');
-    use function Assets\Model\Data_model;
+    use function Assets\Model\Colores_model;
 
-    class Data_controller {
+    class Colores_controller {
 
         private $db_connection;
         
@@ -20,8 +20,8 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $data_model = Data_model($this->db_connection);
-                $response['body'] = array( 'data' => $data_model->Select());
+                $colores_controller = Colores_model($this->db_connection);
+                $response['body'] = array( 'data' => $colores_controller->Select());
                 $response['status'] = 200;
 
             } catch (Exception $e) {
@@ -39,8 +39,8 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $data_model = Data_model($this->db_connection);
-                $data_in = $data_model->Select(
+                $colores_controller = Colores_model($this->db_connection);
+                $data_in = $colores_controller->Select(
                     function($data) use ($request){
                         return $data['ci'] == $request['endpoint_params']['ci'];
                     }
@@ -71,9 +71,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $data_model = Data_model($this->db_connection);
+                $colores_controller = Colores_model($this->db_connection);
                 $data_reg = $request['body'];
-                $result = $data_model->Create($data_reg);
+                $result = $colores_controller->Create($data_reg);
                 if(!$result){
                     $response['status'] = 400;
                     $response['body'] = array('message' => 'Malos datos de entrada');
@@ -98,9 +98,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $data_model = Data_model($this->db_connection);
+                $colores_controller = Colores_model($this->db_connection);
                 $data_in = array_merge($request['body'], [ 'ci' => $request['endpoint_params']['ci'] ]);
-                $result = $data_model->Update($data_in);
+                $result = $colores_controller->Update($data_in);
 
                 if(!$result){
                     $response['status'] = 403;
@@ -128,9 +128,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $data_model = Data_model($this->db_connection);
+                $colores_controller = Colores_model($this->db_connection);
                 $pk = $request['endpoint_params']['ci'];
-                $result = $data_model->Delete($pk);
+                $result = $colores_controller->Delete($pk);
                 if(!$result){
                     $response['status'] = 403;
                     $response['body'] = array('message' => 'No se pudo eliminar el registro');

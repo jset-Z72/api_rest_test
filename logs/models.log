@@ -151,3 +151,115 @@ DETAIL:  Key (ci)=(V301) already exists.
 [INFO][2025-07-04 00:57:50] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
 [INFO][2025-07-04 00:57:58] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
 [INFO][2025-07-04 00:58:01] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:50:25] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:51:47] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:53:47] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:53:48] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:56:23] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:56:24] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:56:24] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:58:02] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:58:12] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 01:58:12] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 01:58:34] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:58:37] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:58:45] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 01:59:00] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 02:01:16] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 02:01:23] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 02:01:32] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:01:32] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:01:33] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:01:33] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:04:52] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:04:52] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:05:37] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:05:37] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:08:23] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 02:11:10] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:11:10] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:11:17] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[INFO][2025-07-04 02:11:54] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:11:54] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:11:55] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:11:55] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:11:55] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:11:55] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:12:12] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:12:12] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:12:13] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:12:13] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:12:55] successful connection to DSN:pgsql:host=localhost;dbname=template1;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:12:55] SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "detalles_zapatos" does not exist
+LINE 1: ...Cod_categoria", "Cod_clasificacion", "Talla" FROM "detalles_...
+                                                             ^
+[INFO][2025-07-04 02:14:01] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:15:29] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:16:32] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:22:17] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:22:17] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:22:19] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:22:19] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:22:19] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:22:19] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:22:20] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:22:20] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:00] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:23:00] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:01] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:23:01] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:02] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:23:02] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:02] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:23:02] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:02] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:23:02] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:02] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:23:02] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "" WHERE ""
+LINE 1: " WHERE "Activo" = true
+        ^
+[INFO][2025-07-04 02:23:56] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:26:24] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:26:24] SQLSTATE[HY093]: Invalid parameter number: :Id
+[INFO][2025-07-04 02:26:31] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:26:31] SQLSTATE[HY093]: Invalid parameter number: :Id

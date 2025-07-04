@@ -31,6 +31,9 @@ namespace Vendor\Model {
 
                 // Get templates for prepare queries
 
+                // echo '<pre>';
+                // echo print_r($queries);
+                // echo '</pre>';
                 // Prepare CRUD queries
                 $this->select_query = $this->connection->prepare($queries['select']);
                 $this->update_query = $this->connection->prepare($queries['update']);

@@ -1,9 +1,11 @@
 <?php 
-    // $db_connection presente en ./init.php
+namespace Assets\Model {
+	// Definición del modelo de detalles_zapatos
+    require_once('internal/model/model.php');
 
-    require_once('internal/model.php');
-
-	$Detalles_zapatos_model = new Model(
+	use Vendor\Model\Model;
+	function Detalles_zapatos_model(&$db_connection) {
+		return new Model(
 		[
 			'table_name' => 'detalles_zapatos',
 			'fields' => [
@@ -23,4 +25,6 @@
 			]
 		],
 		$db_connection);
+	}
+}
 ?>
