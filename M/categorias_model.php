@@ -13,6 +13,7 @@ namespace Assets\Model {
 					'primary_key' => 1,
 					'auto_set' => 1,
 				],
+				'Cod_categoria' => 1,
 				'Descripcion' => 1,
 			]
 		],

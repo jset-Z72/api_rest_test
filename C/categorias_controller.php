@@ -3,7 +3,7 @@ namespace Assets\Controller {
 
     use Exception;
 
-    // Controlador para el modelo data
+    // Controlador para el modelo categorias
     require_once('./M/init.php');
     use function Assets\Model\Categorias_model;
 
@@ -20,8 +20,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $categoias_model = Categorias_model($this->db_connection);
-                $response['body'] = array( 'data' => $categoias_model->Select());
+                $categorias = Categorias_model($this->db_connection);
+                $response['body'] = array('message' => 'Registros encontrados con exito');
+                $response['body']['data'] = $categorias->Select();
                 $response['status'] = 200;
 
             } catch (Exception $e) {
@@ -39,10 +40,10 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $categoias_model = Categorias_model($this->db_connection);
-                $data_in = $categoias_model->Select(
+                $categorias = Categorias_model($this->db_connection);
+                $data_in = $categorias->Select(
                     function($data) use ($request){
-                        return $data['ci'] == $request['endpoint_params']['ci'];
+                        return $data['Id'] == $request['endpoint_params']['Id'];
                     }
                 );
                 if(empty($data_in)){
@@ -71,9 +72,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $categoias_model = Categorias_model($this->db_connection);
+                $categorias = Categorias_model($this->db_connection);
                 $data_reg = $request['body'];
-                $result = $categoias_model->Create($data_reg);
+                $result = $categorias->Create($data_reg);
                 if(!$result){
                     $response['status'] = 400;
                     $response['body'] = array('message' => 'Malos datos de entrada');
@@ -98,9 +99,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $categoias_model = Categorias_model($this->db_connection);
-                $data_in = array_merge($request['body'], [ 'ci' => $request['endpoint_params']['ci'] ]);
-                $result = $categoias_model->Update($data_in);
+                $categorias = Categorias_model($this->db_connection);
+                $data_in = array_merge($request['body'], [ 'Id' => $request['endpoint_params']['Id'] ]);
+                $result = $categorias->Update($data_in);
 
                 if(!$result){
                     $response['status'] = 403;
@@ -108,9 +109,7 @@ namespace Assets\Controller {
                 } else {
                     $response['status'] = 200;
                     $response['body'] = array('message' => 'Registro actualizado con exito');
-                    foreach($data_in as $ket => $data){
-                        $response['body']['data'] = $data;
-                    }
+                    $response['body']['data'] = $data_in;
                 }
 
             } catch (Exception $e) {
@@ -128,16 +127,16 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $categoias_model = Categorias_model($this->db_connection);
-                $pk = $request['endpoint_params']['ci'];
-                $result = $categoias_model->Delete($pk);
+                $categorias = Categorias_model($this->db_connection);
+                $pk = $request['endpoint_params']['Id'];
+                $result = $categorias->Delete($pk);
                 if(!$result){
                     $response['status'] = 403;
                     $response['body'] = array('message' => 'No se pudo eliminar el registro');
                 } else {
                     $response['status'] = 200;
                     $response['body'] = array('message' => 'Registro eliminado con exito');
-                    $response['body']['data'] = array('ci' => $pk);
+                    $response['body']['data'] = array('Id' => $pk);
                 }
 
             } catch (Exception $e) {

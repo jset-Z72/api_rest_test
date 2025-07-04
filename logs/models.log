@@ -263,3 +263,132 @@ LINE 1: " WHERE "Activo" = true
 [ERROR][2025-07-04 02:26:24] SQLSTATE[HY093]: Invalid parameter number: :Id
 [INFO][2025-07-04 02:26:31] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
 [ERROR][2025-07-04 02:26:31] SQLSTATE[HY093]: Invalid parameter number: :Id
+[INFO][2025-07-04 02:41:33] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:41:42] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:41:42] SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "detalles_zapatos_Cod_zapato_key"
+DETAIL:  Key ("Cod_zapato")=(nk1234) already exists.
+[INFO][2025-07-04 02:41:45] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:42:23] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:42:30] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:43:43] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:43:43] SQLSTATE[HY093]: Invalid parameter number: :ci
+[INFO][2025-07-04 02:44:25] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:44:58] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:45:39] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:45:50] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:46:05] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:46:17] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:46:58] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:47:01] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:49:08] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:49:29] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 02:49:29] SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "detalles_zapatos_Cod_zapato_key"
+DETAIL:  Key ("Cod_zapato")=(nk1234) already exists.
+[INFO][2025-07-04 02:49:39] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:49:56] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:49:59] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:50:23] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:50:30] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:50:45] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:50:50] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 02:50:57] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:24:43] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:24:49] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:24:53] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:24:55] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:25:00] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:26:59] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:27:11] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:27:11] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...ELECT "Id", "Descripcion" FROM "categorias" WHERE "" = true;
+                                                             ^
+[INFO][2025-07-04 11:30:45] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:31:10] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:31:10] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...ELECT "Id", "Descripcion" FROM "categorias" WHERE "" = true;
+                                                             ^
+[INFO][2025-07-04 11:33:11] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:33:11] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...ELECT "Id", "Descripcion" FROM "categorias" WHERE "" = true;
+                                                             ^
+[INFO][2025-07-04 11:34:26] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:34:26] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...ELECT "Id", "Descripcion" FROM "categorias" WHERE "" = true;
+                                                             ^
+[INFO][2025-07-04 11:34:48] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:34:48] SQLSTATE[42601]: Syntax error: 7 ERROR:  zero-length delimited identifier at or near """"
+LINE 1: ...ELECT "Id", "Descripcion" FROM "categorias" WHERE "" = true;
+                                                             ^
+[INFO][2025-07-04 11:36:32] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:36:40] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:46:28] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:46:33] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:46:56] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:47:38] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:48:21] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:48:21] SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "detalles_zapatos_Cod_zapato_key"
+DETAIL:  Key ("Cod_zapato")=(nk2234) already exists.
+[INFO][2025-07-04 11:48:30] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:49:59] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:50:05] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:50:17] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:50:17] SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "Cod_categoria" of relation "categorias" violates not-null constraint
+DETAIL:  Failing row contains (1, null, Categoria de los mecos).
+[INFO][2025-07-04 11:51:09] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:51:26] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:52:04] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:52:15] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:52:15] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000003" requires 2
+[INFO][2025-07-04 11:52:56] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:52:56] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000003" requires 2
+[INFO][2025-07-04 11:54:10] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:54:10] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000003" requires 2
+[INFO][2025-07-04 11:56:24] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:56:24] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000003" requires 2
+[INFO][2025-07-04 11:56:37] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:57:02] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:57:02] SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "categorias_Cod_categoria_key"
+DETAIL:  Key ("Cod_categoria")=(qq) already exists.
+[INFO][2025-07-04 11:58:26] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 11:59:17] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:59:17] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000002" requires 3
+[INFO][2025-07-04 11:59:49] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:59:49] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 2 parameters, but prepared statement "pdo_stmt_00000002" requires 3
+[INFO][2025-07-04 11:59:55] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 11:59:55] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000002" requires 3
+[INFO][2025-07-04 12:00:51] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 12:00:51] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000002" requires 3
+[INFO][2025-07-04 12:03:46] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 12:03:46] SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000002" requires 3
+[INFO][2025-07-04 12:04:09] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:04:17] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:04:26] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:04:47] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:04:59] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:09:06] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[ERROR][2025-07-04 12:09:06] SQLSTATE[42703]: Undefined column: 7 ERROR:  column "Cod_clasificacion" does not exist
+LINE 1: SELECT "Id", "Cod_clasificacion", "Descripcion" FROM "colore...
+                     ^
+[INFO][2025-07-04 12:09:51] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:10:06] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:10:16] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:11:04] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:11:09] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:11:12] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:11:34] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:12:04] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:12:08] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:12:20] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:12:23] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:15:52] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:16:21] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:16:30] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:17:23] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:17:36] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:18:21] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:18:24] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:18:35] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:19:29] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:19:35] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:19:42] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756
+[INFO][2025-07-04 12:19:48] successful connection to DSN:pgsql:host=localhost;dbname=zapatos;user=postgres;password=1029384756

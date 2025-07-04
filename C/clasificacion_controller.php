@@ -20,8 +20,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $clasificacion_controller = Clasificacion_model($this->db_connection);
-                $response['body'] = array( 'data' => $clasificacion_controller->Select());
+                $clasificacion = Clasificacion_model($this->db_connection);
+                $response['body'] = array('message' => 'Registros encontrados con exito');
+                $response['body']['data'] = $clasificacion->Select();
                 $response['status'] = 200;
 
             } catch (Exception $e) {
@@ -39,10 +40,10 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $clasificacion_controller = Clasificacion_model($this->db_connection);
-                $data_in = $clasificacion_controller->Select(
+                $clasificacion = Clasificacion_model($this->db_connection);
+                $data_in = $clasificacion->Select(
                     function($data) use ($request){
-                        return $data['ci'] == $request['endpoint_params']['ci'];
+                        return $data['Id'] == $request['endpoint_params']['Id'];
                     }
                 );
                 if(empty($data_in)){
@@ -71,9 +72,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $clasificacion_controller = Clasificacion_model($this->db_connection);
+                $clasificacion = Clasificacion_model($this->db_connection);
                 $data_reg = $request['body'];
-                $result = $clasificacion_controller->Create($data_reg);
+                $result = $clasificacion->Create($data_reg);
                 if(!$result){
                     $response['status'] = 400;
                     $response['body'] = array('message' => 'Malos datos de entrada');
@@ -98,9 +99,9 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $clasificacion_controller = Clasificacion_model($this->db_connection);
-                $data_in = array_merge($request['body'], [ 'ci' => $request['endpoint_params']['ci'] ]);
-                $result = $clasificacion_controller->Update($data_in);
+                $clasificacion = Clasificacion_model($this->db_connection);
+                $data_in = array_merge($request['body'], [ 'Id' => $request['endpoint_params']['Id'] ]);
+                $result = $clasificacion->Update($data_in);
 
                 if(!$result){
                     $response['status'] = 403;
@@ -108,9 +109,7 @@ namespace Assets\Controller {
                 } else {
                     $response['status'] = 200;
                     $response['body'] = array('message' => 'Registro actualizado con exito');
-                    foreach($data_in as $ket => $data){
-                        $response['body']['data'] = $data;
-                    }
+                    $response['body']['data'] = $data_in;
                 }
 
             } catch (Exception $e) {
@@ -128,16 +127,16 @@ namespace Assets\Controller {
             // Obtiene la dirección del logger
             $log = $this->db_connection->log;
             try {
-                $clasificacion_controller = Clasificacion_model($this->db_connection);
-                $pk = $request['endpoint_params']['ci'];
-                $result = $clasificacion_controller->Delete($pk);
+                $clasificacion = Clasificacion_model($this->db_connection);
+                $pk = $request['endpoint_params']['Id'];
+                $result = $clasificacion->Delete($pk);
                 if(!$result){
                     $response['status'] = 403;
                     $response['body'] = array('message' => 'No se pudo eliminar el registro');
                 } else {
                     $response['status'] = 200;
                     $response['body'] = array('message' => 'Registro eliminado con exito');
-                    $response['body']['data'] = array('ci' => $pk);
+                    $response['body']['data'] = array('Id' => $pk);
                 }
 
             } catch (Exception $e) {

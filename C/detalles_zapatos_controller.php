@@ -43,7 +43,7 @@ namespace Assets\Controller {
                 $detalle_zapatos = Detalles_zapatos_model($this->db_connection);
                 $data_in = $detalle_zapatos->Select(
                     function($data) use ($request){
-                        return $data['ci'] == $request['endpoint_params']['ci'];
+                        return $data['Id'] == $request['endpoint_params']['Id'];
                     }
                 );
                 if(empty($data_in)){
@@ -100,7 +100,7 @@ namespace Assets\Controller {
             $log = $this->db_connection->log;
             try {
                 $detalle_zapatos = Detalles_zapatos_model($this->db_connection);
-                $data_in = array_merge($request['body'], [ 'ci' => $request['endpoint_params']['ci'] ]);
+                $data_in = array_merge($request['body'], [ 'Id' => $request['endpoint_params']['Id'] ]);
                 $result = $detalle_zapatos->Update($data_in);
 
                 if(!$result){
@@ -109,9 +109,7 @@ namespace Assets\Controller {
                 } else {
                     $response['status'] = 200;
                     $response['body'] = array('message' => 'Registro actualizado con exito');
-                    foreach($data_in as $ket => $data){
-                        $response['body']['data'] = $data;
-                    }
+                    $response['body']['data'] = $data_in;
                 }
 
             } catch (Exception $e) {
@@ -130,7 +128,7 @@ namespace Assets\Controller {
             $log = $this->db_connection->log;
             try {
                 $detalle_zapatos = Detalles_zapatos_model($this->db_connection);
-                $pk = $request['endpoint_params']['ci'];
+                $pk = $request['endpoint_params']['Id'];
                 $result = $detalle_zapatos->Delete($pk);
                 if(!$result){
                     $response['status'] = 403;
@@ -138,7 +136,7 @@ namespace Assets\Controller {
                 } else {
                     $response['status'] = 200;
                     $response['body'] = array('message' => 'Registro eliminado con exito');
-                    $response['body']['data'] = array('ci' => $pk);
+                    $response['body']['data'] = array('Id' => $pk);
                 }
 
             } catch (Exception $e) {

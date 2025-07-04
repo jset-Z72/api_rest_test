@@ -13,7 +13,7 @@ namespace Assets\Model {
 					'primary_key' => 1,
 					'auto_set' => 1,
 				],
-				'Cod_clasificacion' => 1,
+				'Cod_color' => 1,
 				'Descripcion' => 1,
 			]
 		],

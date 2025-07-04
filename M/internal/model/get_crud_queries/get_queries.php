@@ -19,9 +19,9 @@ namespace Vendor\Model\get_crud_queries {
             $query_fields = get_query_fields($table_map);
 
             $queries['select'] =
-                'SELECT ' .$query_fields['select']. ' FROM "' .$table_map['table_name'].
-                (isset($recognized_data['status_field']) ?
-                    '" WHERE "' .$recognized_data['status_field']. '" = true'
+                'SELECT ' .$query_fields['select']. ' FROM "' .$table_map['table_name']. '"' .
+                ($recognized_data['status_field'] !== '' ?
+                    ' WHERE "' .$recognized_data['status_field']. '" = true'
                 :
                     '')
                 . ';'
@@ -33,15 +33,22 @@ namespace Vendor\Model\get_crud_queries {
             ;
 
             $queries['update'] = 
-                'UPDATE "' .$table_map['table_name']. '" SET ' .$query_fields['update']['params'].
+                'UPDATE "' .$table_map['table_name']. '" SET ' . $query_fields['update']['params'].
                 ' WHERE "'. $recognized_data['primary_key']. '" = :' .$recognized_data['primary_key'].
-                ' AND "' .$recognized_data['status_field']. '" = true;'
+                ($recognized_data['status_field'] !== '' ?
+                     ' AND "' . $recognized_data['status_field']. '" = true;'
+                :
+                    ';')
             ;
 
-            $queries['delete'] =
+            $queries['delete'] = $recognized_data['status_field'] ?
                 'UPDATE "' .$table_map['table_name']. '" SET "' .$recognized_data['status_field'].
                 '" = false WHERE "'. $recognized_data['primary_key']. '" = :' .$recognized_data['primary_key']. " ;"
+            :
+                'DELETE FROM "' .$table_map['table_name']. '" WHERE "'.
+                $recognized_data['primary_key']. '" = :' .$recognized_data['primary_key']. " ;"
             ;
+
 
             return $queries;
         } catch (Exception $e) {
