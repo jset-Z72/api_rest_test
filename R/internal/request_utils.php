@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Route\__base__ {
+namespace Vendor\Route {
 
     use \Exception;
 

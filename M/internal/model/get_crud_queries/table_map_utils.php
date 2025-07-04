@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Model\__base__ {
+namespace Vendor\Model\get_crud_queries {
     require_once(__DIR__ . '/../../../core/utils.php');
     use \Exception;
     use function Vendor\Model\__core__\validate_name_table;

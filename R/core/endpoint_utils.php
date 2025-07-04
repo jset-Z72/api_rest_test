@@ -14,10 +14,10 @@ namespace Vendor\Route\__core__ {
                 if (!preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $match[1])) {
                     throw new InvalidArgumentException("Invalid parameter name: {$match[1]}");
                 }
-                return '(?P<' . $match[1] . '>[^\/]+)';
+                return '(?P<' . $match[1] . '>[^/]+)';
             },
             $endpoint
-        ) . '$#x';
+        ) . '/?$#x';
     }
 
     /*function get_params(string $uri, string $endpoint_pattern): array {

@@ -9,6 +9,7 @@ namespace Vendor {
                 'models' => file_exists($files['MODELS']) ? $files['MODELS'] : '',
                 'app' => file_exists($files['APP']) ? $files['APP'] : '',
                 'routes' => file_exists($files['ROUTES']) ? $files['ROUTES'] : '',
+                'controllers' => file_exists($files['CONTROLLERS']) ? $files['CONTROLLERS'] : '',
             ];
 
             foreach($files as $key => $value){
@@ -55,6 +56,12 @@ namespace Vendor {
             $fecha = date('Y-m-d H:i:s');
             $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
             $this->put_log('routes', $log, $level);
+        }
+
+        public function controller($level, $msg){
+            $fecha = date('Y-m-d H:i:s');
+            $log = "[".strtoupper($level)."][" . $fecha . "] " . $msg . "\n";
+            $this->put_log('controllers', $log, $level);
         }
     }
 }

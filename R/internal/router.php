@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Route\__base__ {
+namespace Vendor\Route {
     require_once(__DIR__ . "/../core/endpoint_utils.php");
     require_once(__DIR__ . "/request_utils.php");
 

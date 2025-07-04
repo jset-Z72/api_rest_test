@@ -10,7 +10,7 @@
     require_once('R/core/default_body_converters.php');
 
     use Vendor\Logger;
-    use vendor\Route\__base__\Router;
+    use vendor\Route\Router;
     use function Vendor\Route\__core__\default_response_converter_json;
 
     // Creación del logger
@@ -24,15 +24,20 @@
 
     // Creando un controlador de prueba
     function test_controller($req, &$res) {
-        if(isset($req['name'])){
-            $res['body']['text'] = "Hola ".$req['name']."! ¿cómo estas?";
+        if(isset($req['endpoint_params']['name'])){
+            $res['body'] = array( "text" => "Hola ".$req['endpoint_params']['name']."! ¿cómo estas?");
+        } else {
+            $res['body'] = array('text' => "Esto es un mensaje de prueba. Envía tu nombre en la ruta para saludarte!");
         }
-        $res['body'] = array('text' => "Esto es un mensaje de prueba. Envía tu nombre en la ruta para saludarte!");
     }
 
     // enrutando el controlador
-    $router->attach_endpoint('GET', '/test/:value/:var', 'test_controller',
+    $router->attach_endpoint('GET', '/test', 'test_controller',
         "Vendor\\Route\\__core__\\default_response_converter_json"
+    );
+    $router->attach_endpoint('GET', '/test/:name', 'test_controller',
+        "Vendor\\Route\\__core__\\default_response_converter_json",
+        "Vendor\\Route\\__core__\\default_request_converter_json"
     );
     // echo "Enrutación exitosa para el endpoint /test<br>";
 

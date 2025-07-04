@@ -1,5 +1,6 @@
 <?php
-namespace Vendor\Model\__base__ {
+namespace Vendor\Model {
+    require_once(__DIR__ . '/../../core/utils.php');
     use \PDO;
     use \PDOException;
     use function Vendor\Model\__core__\get_dsn;
@@ -14,14 +15,14 @@ namespace Vendor\Model\__base__ {
         // private $database;
         public $log;
 
-        public function __construct(array $DSN = [
+        public function __construct(&$log, array $DSN = [
             'DB_DRIVER' => 'mysql',
             'DB_HOST' => 'localhost',
             'DB_PORT' => '3306',
             'DB_USER' => 'root',
             'DB_PASS' => '',
             'DB_NAME' => ''
-        ], &$log) {
+        ]) {
             // Constructor
 
             $dsn = get_dsn($DSN);

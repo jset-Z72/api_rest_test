@@ -26,7 +26,7 @@ namespace Vendor\Route\__core__ {
 
     // For requestes
     function default_request_converter_json(&$body) {
-        $body = json_decode($body);
+        $body = json_decode($body, true);
         if(!isset($body)){
             $body = array();
        }

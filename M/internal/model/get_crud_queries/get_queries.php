@@ -1,5 +1,5 @@
 <?php
-namespace Vendor\Model\__base__ {
+namespace Vendor\Model\get_crud_queries {
     require_once('table_map_utils.php');
     use \Exception;
 

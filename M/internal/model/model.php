@@ -1,12 +1,16 @@
 <?php
-namespace Vendor\Model\__base__ {
+namespace Vendor\Model {
     require_once('get_crud_queries/get_queries.php');
     use \Exception;
     use \PDO;
 
+    use function Vendor\Model\get_crud_queries\get_queries;
+    use function Vendor\Model\get_crud_queries\validate_table_map;
+
     class Model {
         private $connection;
         private $table_map;
+        private $recognized_data;
 
         private $select_query;
         private $update_query;
@@ -22,13 +26,11 @@ namespace Vendor\Model\__base__ {
 
                 // Add connection
                 $this->connection = $connection;
+                $this->recognized_data = validate_table_map($table_map);
                 $log = &$connection->log;
 
                 // Get templates for prepare queries
 
-                echo '<pre>';
-                echo print_r($queries);
-                echo '</pre>';
                 // Prepare CRUD queries
                 $this->select_query = $this->connection->prepare($queries['select']);
                 $this->update_query = $this->connection->prepare($queries['update']);
@@ -66,8 +68,7 @@ namespace Vendor\Model\__base__ {
                 foreach($data as $key => $value){
                         $this->create_query->bindValue(':'.$key, $value);
                     }
-                $this->create_query->execute($data);
-                return $data;
+                return $this->create_query->execute();
             } catch (Exception $e) {
                 $log->model('error', $e->getMessage());
             }
@@ -79,21 +80,17 @@ namespace Vendor\Model\__base__ {
                 foreach($data as $key => $value){
                     $this->update_query->bindValue(':'.$key, $value);
                 }
-                $this->update_query->execute($data);
-                return $data;
+                return $this->update_query->execute();
             } catch (Exception $e) {
                 $log->model('error', $e->getMessage());
             }
         }
         
-        public function Delete($data){
+        public function Delete($pk){
             $log = &$this->connection->log;
             try {
-                foreach($data as $key => $value){
-                    $this->delete_query->bindValue(':'.$key, $value);
-                }
-                $this->delete_query->execute($data);
-                return $data;
+                $this->delete_query->bindValue(':'.$this->recognized_data['primary_key'], $pk);
+                return $this->delete_query->execute();
             } catch (Exception $e) {
                 $log->model('error', $e->getMessage());
             }
